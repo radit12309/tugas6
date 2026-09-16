@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata Raditya Syahputra</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e40af, #38bdf8);
+            color: #1e293b;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1050px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background: #0f172a;
+            padding: 18px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .nav-menu a:hover {
+            color: #38bdf8;
+        }
+
+        /* PROFIL UTAMA */
+
+        .hero {
+            background: linear-gradient(135deg, #0f172a, #1d4ed8);
+            color: white;
+            text-align: center;
+            padding: 55px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            top: -100px;
+            left: -80px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(56,189,248,0.12);
+            border-radius: 50%;
+            bottom: -150px;
+            right: -100px;
+        }
+
+        .foto {
+            width: 180px;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 5px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+            position: relative;
+            z-index: 2;
+            transition: 0.4s;
+        }
+
+        .foto:hover {
+            transform: scale(1.06) rotate(1deg);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin: 20px 0 8px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin: 5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 9px 20px;
+            border-radius: 30px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CONTENT */
+
+        .content {
+            padding: 45px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .title {
+            color: #173b63;
+            font-size: 25px;
+            border-bottom: 3px solid #e2e8f0;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+        }
+
+        .title span {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin-right: 8px;
+        }
+
+        /* DATA PRIBADI */
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .data-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 5px solid #2563eb;
+            transition: 0.3s;
+        }
+
+        .data-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .label {
+            color: #64748b;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .value {
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        /* PENDIDIKAN */
+
+        .timeline {
+            border-left: 4px solid #2563eb;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            background: #f8fafc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #2563eb;
+            border-radius: 50%;
+            left: -39px;
+            top: 25px;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #2563eb;
+        }
+
+        .timeline-item h3 {
+            margin: 0 0 8px;
+            color: #173b63;
+        }
+
+        .timeline-item p {
+            margin: 0;
+        }
+
+        /* HOBI */
+
+        .hobi {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .hobi-card {
+            text-align: center;
+            background: #f8fafc;
+            padding: 25px 10px;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .hobi-card:hover {
+            transform: translateY(-7px);
+            background: #eff6ff;
+        }
+
+        .hobi-card .icon {
+            font-size: 38px;
+        }
+
+        .hobi-card p {
+            font-weight: bold;
+        }
+
+        /* MOTTO */
+
+        .motto {
+            background: linear-gradient(135deg, #0f172a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 35px 25px;
+            border-radius: 20px;
+        }
+
+        .motto p {
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer p {
+            margin: 6px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 750px) {
+
+            .container {
+                width: 95%;
+                margin: 15px auto;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-menu a {
+                margin: 0 7px;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .content {
+                padding: 25px 18px;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hobi {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .foto {
+                width: 150px;
+                height: 180px;
+            }
+
+            .hero h1 {
+                font-size: 25px;
+            }
+
+            .nav-menu a {
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+        </div>
+
+        <div class="nav-menu">
+            <a href="#profil">Profil</a>
+            <a href="#data">Data Diri</a>
+            <a href="#pendidikan">Pendidikan</a>
+            <a href="#hobi">Hobi</a>
+            <a href="#motto">Motto</a>
+        </div>
+
+    </div>
+
+
+    <!-- PROFIL UTAMA -->
+
+    <div class="hero" id="profil">
+
+        <img src="fotosekolah.jpg" class="foto" alt="Foto Raditya">
+
+        <h1>Raditya Syahputra</h1>
+
+        <p>Pelajar • Rekayasa Perangkat Lunak</p>
+
+        <div class="status">
+            ✨ Student & Technology Enthusiast
+        </div>
+
+    </div>
+
+
+    <div class="content">
+
+
+        <!-- DATA PRIBADI -->
+
+        <div class="section" id="data">
+
+            <h2 class="title">
+                <span>👤</span>
+                Data Pribadi
+            </h2>
+
+            <div class="data-grid">
+
+                <div class="data-card">
+                    <div class="label">Nama Lengkap</div>
+                    <div class="value">Raditya Syahputra</div>
+                </div>
+
+                <div class="data-card">
+                    <div class="label">Tempat, Tanggal Lahir</div>
+                    <div class="value">Jember, 2008</div>
+                </div>
+
+                <div class="data-card">
+                    <div class="label">Jenis Kelamin</div>
+                    <div class="value">Laki-laki</div>
+                </div>
+
+                <div class="data-card">
+                    <div class="label">Alamat</div>
+                    <div class="value">Jember, Jawa Timur</div>
+                </div>
+
+                <div class="data-card">
+                    <div class="label">Status</div>
+                    <div class="value">Pelajar</div>
+                </div>
+
+                <div class="data-card">
+                    <div class="label">Jurusan</div>
+                    <div class="value">Rekayasa Perangkat Lunak</div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PENDIDIKAN -->
+
+        <div class="section" id="pendidikan">
+
+            <h2 class="title">
+                <span>🎓</span>
+                Pendidikan
+            </h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <h3>SMK</h3>
+
+                    <p>
+                        Jurusan Rekayasa Perangkat Lunak
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <h3>Kelas XI</h3>
+
+                    <p>
+                        Mempelajari pemrograman, database,
+                        pengembangan website, dan aplikasi.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HOBI -->
+
+        <div class="section" id="hobi">
+
+            <h2 class="title">
+                <span>🎮</span>
+                Hobi
+            </h2>
+
+            <div class="hobi">
+
+                <div class="hobi-card">
+
+                    <div class="icon">🎮</div>
+
+                    <p>Bermain Game</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MOTTO -->
+
+        <div class="section" id="motto">
+
+            <div class="motto">
+
+                <h2>💬 Motto</h2>
+
+                <p>
+                    "Terus belajar, terus berkembang,
+                    dan jangan takut mencoba hal baru."
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <p>© 2026 Raditya Syahputra</p>
+
+        <p>Biodata Pribadi</p>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
